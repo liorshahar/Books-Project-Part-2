@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+
+
+/* App elements css*/
+
+.appLinks h1{
+	margin-left: 45px;
+}
+
+.appLinks li{
+	list-style: none;
+}
+
+.linkBtn{
+	margin: 5px;
+	height: 40px;
+	width: 380px;
+	background-color: #428bca;  
+  	border-radius: 9px;
+  	color: white;
+  	padding: .5em;
+  	font-size: 19px;
+
+}
+
+.linkBtn:hover{
+	cursor: pointer;
+	background-color: #5bc0de;
+  	color: White;
+}
+
+
+/* Book list elements css*/
+
+.bookList{
+	width: 600px;
+	border: 1px solid black;
+	margin-top: 70px;
+	margin-left: 45px;
+}
