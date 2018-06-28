@@ -6,7 +6,16 @@ body {
 
 
 
-/* App elements css*/
+/* Header elements css*/
+.appLinks{
+    float: left;
+}
+
+.appLinks:after{
+    content: "";
+    display: block;
+    clear: both;
+}
 
 .appLinks h1{
 	margin-left: 45px;
@@ -18,14 +27,16 @@ body {
 
 .linkBtn{
 	margin: 5px;
-	height: 40px;
-	width: 380px;
+	height: 33px;
+	width: 330px;
 	background-color: #428bca;  
   	border-radius: 9px;
   	color: white;
   	padding: .5em;
   	font-size: 19px;
-
+    float: left;
+    line-height: 33px;
+    text-decoration: none;
 }
 
 .linkBtn:hover{
@@ -37,9 +48,67 @@ body {
 
 /* Book list elements css*/
 
+.bookList h4{
+    padding-left: 90px;
+}
+
 .bookList{
+    clear: both;
 	width: 600px;
 	border: 1px solid black;
 	margin-top: 70px;
 	margin-left: 45px;
+    float: left;
+}
+
+
+/* Book item css */
+
+.bookItem{
+    padding: 15px;
+    width: 400px;
+    margin: 0 auto;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+/* Book by Id css */
+
+.bookById{
+    clear: both;
+    float: left;
+    margin-top: 70px;
+    margin-left: 45px;
+}
+
+.bookById label{
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.bookById input{
+    margin-left: 30px;
+    height: 25px;
+}
+
+.bookById button , .bookList button{
+    border: none; 
+    margin-top: 20px;
+    height: 40px;
+    background-color: #428bca;  
+    border-radius: 9px;
+    color: white;
+    padding: .5em;
+    font-size: 19px;
+    float: left;
+    line-height: 25px;
+    text-decoration: none;
+}
+
+
+.bookById button:hover{
+    cursor: pointer;
+    background-color: #5bc0de;
+    color: White;
 }
