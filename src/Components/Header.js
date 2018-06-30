@@ -19,7 +19,7 @@ class Header extends Component {
                     <ul>
                         <li><NavLink exact to="/" className="linkBtn" activeStyle={this.active} >Get all books</NavLink></li>
                         <li> <NavLink exact to="/getBookById" className="linkBtn" activeStyle={this.active} >Get book by id</NavLink></li>
-                        <li><NavLink exact to="/getBookByAuthorNameAndPrice" className="linkBtn">Get book by author name and price</NavLink></li>
+                        <li><NavLink exact to="/getBookByAuthorNameAndPrice" className="linkBtn" activeStyle={this.active} >Get book by author name and price</NavLink></li>
                     </ul>
                 </div>
                 

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Book from './Book';
 
 
-class BookById extends Component {
+class BookByNameAndPrice extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -10,32 +10,34 @@ class BookById extends Component {
             isFind: false
         }
 
-        this.textInput               = React.createRef();
-        this.renderForm              = this.renderForm.bind(this);
-        this.fetchData               = this.fetchData.bind(this);
-        this.renderFindNewBook       = this.renderFindNewBook.bind(this);
+        this.authorInput        = React.createRef();
+        this.priceInput         = React.createRef();
+        this.renderForm         = this.renderForm.bind(this);
+        this.fetchData          = this.fetchData.bind(this);
+        this.renderFindNewBook  = this.renderFindNewBook.bind(this);
 
     }   
 
 
     fetchData(){
-        var bookId = this.textInput.value
-        if(bookId){
-            console.log(bookId);
-            fetch(`https://computer-store-service.herokuapp.com/books/${bookId}`)
+        var authorName = this.authorInput.value;
+        var bookPrice  = this.priceInput.value;
+        if(BookByNameAndPrice){
+            console.log(BookByNameAndPrice);
+            fetch(`https://computer-store-service.herokuapp.com/books/${authorName}/${bookPrice}`)
             .then((response) => response.json())
             .then(book => {
                 if(!book.error){
                     var newBook = {
-                    name:       book.result.name,
-                    id:         book.result._id,
-                    price:      book.result.price,
-                    authorName: book.result.author.name,
-                    awards:     book.result.author.awards 
+                        name:       book.result[0].name,
+                        id:         book.result[0]._id,
+                        price:      book.result[0].price,
+                        authorName: book.result[0].author.name,
+                        awards:     book.result[0].author.awards 
                     }
                 }
                 this.setState({
-                book : newBook,
+                book: newBook,
                 isFind: true
                 })
             })
@@ -59,8 +61,11 @@ class BookById extends Component {
         return (
             <div className="bookById">
                <from>
-                   <label>Book Id: 
-                        <input type="text" ref={input=> this.textInput = input}/>
+                   <label>Author name: 
+                        <input type="text" ref={input=> this.authorInput = input}/>
+                   </label>
+                   <label>Book Price: 
+                        <input type="text" ref={input=> this.priceInput = input}/>
                    </label>
                    <label>
                         <button onClick={this.fetchData}>Find book</button>
@@ -79,4 +84,4 @@ class BookById extends Component {
 
 }
 
-export default BookById
+export default BookByNameAndPrice

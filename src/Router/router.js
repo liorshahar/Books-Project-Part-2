@@ -1,16 +1,9 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import Header from "../Components/Header";
-import BookList from '../Components/BookList';
-import BookById from '../Components/BookById';
-
-
-
-const apiLinks = [
-    'https://computer-store-service.herokuapp.com/books',
-    'https://computer-store-service.herokuapp.com/books/:book_id',
-    'https://computer-store-service.herokuapp.com/books/:authorName/:price'
-]
+import React              from "react";
+import { Route }          from "react-router-dom";
+import Header             from "../Components/Header";
+import BookList           from '../Components/BookList';
+import BookById           from '../Components/BookById';
+import BookByNameAndPrice from '../Components/BookByNameAndPrice';
 
 
 const ReactRouter =()=>{
@@ -19,6 +12,7 @@ const ReactRouter =()=>{
             <Header/>
             <Route exact path="/" component={BookList}/>
             <Route exact path="/getBookById" component={BookById}/>
+            <Route exact path="/getBookByAuthorNameAndPrice" component={BookByNameAndPrice}/>
         </React.Fragment>
     );}
 
